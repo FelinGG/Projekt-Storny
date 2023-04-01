@@ -1,0 +1,146 @@
+:root{
+    --dark: #5b3939;
+    --light: #6f0993;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light);
+    background: linear-gradient(to right top, var(--dark), var(--light));
+    color: antiquewhite;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+.container{
+    width: 66%;
+    height: 66%;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25) );
+    border-radius: 36px;
+    padding: 36px 92px;
+    position: relative;
+    backdrop-filter: blur(4px);
+}
+h1{
+    font-size: 32px;
+    padding-bottom: 12px;
+}
+p{
+    font-size: 20px;
+}
+a{
+    color: #d660b7;
+    text-decoration: none;
+    position: relative;
+}
+#link{
+    font-weight: 900;
+}
+.center{
+    text-align: center;
+    padding: 0px;
+}
+a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background-color: var(--light);
+    background: linear-gradient(90deg, transparent, var(--light));
+    transition: width 0.3s;
+}
+a:hover::after{
+    width: 100%;
+}
+.bg__img{
+    position: absolute;
+}
+.bg__img-button{
+    position: absolute;
+    top: 0px;
+    right: 60%;
+    left: 450px;
+    width: 240px;
+    animation: DropDown 10s linear infinite;
+}
+.bg__img-cogwheel{
+    top: 70px;
+    left: 76.5%;
+    height: 75hv;
+    animation: rotate 20s linear infinite;
+}
+.bg__img-logo{
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.25;
+}
+.opis{
+    display: block;
+    text-align: center;
+    padding-top: 8px;
+    margin-top: 24px;
+    margin-left: 140px;
+    width: 70%;
+    height: 16%;
+    font-size: 20px;
+}
+button{
+    font-size: 32px;
+    width: 300px;
+    margin-top: 24px;
+    margin-left: 33%;
+    padding: 12px 0px;
+    border-radius: 12px;
+    background:linear-gradient(to top right, var(--light), rgba(255, 255, 255, 0.1));
+    color: transparent;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    -webkit-background-clip: text;
+}
+#button{
+    color: #fff;
+}
+button:focus{
+    outline-color: #fff;
+}
+button::after{
+    content: "";
+    position: absolute;
+    left: -70px;
+    top: -50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 50px;
+    height: 200%;
+    transition: transform 0.5s;
+    transform: rotate(20deg);
+}
+button:hover{
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0);
+    transform: translateY(-4px);
+}
+button:hover::after{
+    transform: translateX(400px) rotate(20deg);
+}
+@keyframes DropDown{
+    from {transform: translateY(-240px);}
+    to {transform: translateY(100vh);}
+}
+@keyframes rotate{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
